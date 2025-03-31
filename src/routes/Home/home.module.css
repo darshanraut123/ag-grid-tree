@@ -1,0 +1,9 @@
+.main_body {
+    display: flex;
+    flex-direction: row;
+}
+
+.env {
+    height: 20px;
+
+}

@@ -1,0 +1,52 @@
+.sidebar {
+    position: relative;
+    padding: 10px;
+    height: 100vh;
+    width: 20%;
+    transition: left 0.4s ease-in-out;
+}
+
+.sidebar_open {
+    left: 0;
+}
+
+.sidebar_close {
+    left: -155px;
+    width: 0;
+}
+
+.open_close {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0px 5px 5px;
+}
+
+.profile_container {
+    padding: 10px;
+}
+
+.profile {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: gainsboro;
+}
+
+.name {
+    font-size: 16px;
+}
+
+.role_name {
+    font-size: 12px;
+}
