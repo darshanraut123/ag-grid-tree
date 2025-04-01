@@ -12,6 +12,7 @@ import {
 } from "ag-grid-enterprise";
 import "./custom-tree-grid.css";
 import { ThemeContext } from "../../context/modal-context";
+import { Box, Button } from "@mui/material";
 
 ModuleRegistry.registerModules([AllEnterpriseModule]);
 LicenseManager.setLicenseKey(
@@ -29,6 +30,7 @@ export default function GridExample() {
   const [treeData, setTreeData] = useState([
     {
       path: ["ABC 123"],
+      custom: "",
       Select: false,
       source: "ETRM",
       etrmId: "ABC 123",
@@ -59,6 +61,8 @@ export default function GridExample() {
     },
     {
       path: ["ABC 123", "Endur"],
+      custom: "",
+
       Select: false,
       source: "Endur",
       etrmId: "ABC 123",
@@ -89,6 +93,8 @@ export default function GridExample() {
     },
     {
       path: ["ABC 123", "Inbound"],
+      custom: "",
+
       Select: false,
       source: "Inbound",
       etrmId: "TC-12345",
@@ -119,6 +125,8 @@ export default function GridExample() {
     },
     {
       path: ["ABC 123", "Outbound"],
+      custom: "",
+
       Select: false,
       source: "Outbound",
       etrmId: "ABC 123",
@@ -149,6 +157,8 @@ export default function GridExample() {
     },
     {
       path: ["ABC 123", "Broker"],
+      custom: "",
+
       Select: false,
       source: "Broker",
       etrmId: "BRK-345667",
@@ -179,6 +189,8 @@ export default function GridExample() {
     },
     {
       path: ["ABC 124"],
+      custom: "",
+
       Select: false,
       source: "ETRM",
       etrmId: "ABC 124",
@@ -209,6 +221,8 @@ export default function GridExample() {
     },
     {
       path: ["ABC 124", "Endur"],
+      custom: "",
+
       Select: false,
       source: "Endur",
       etrmId: "ABC 124",
@@ -239,6 +253,8 @@ export default function GridExample() {
     },
     {
       path: ["ABC 124", "Inbound"],
+      custom: "",
+
       Select: false,
       source: "Inbound",
       etrmId: "ABC 124",
@@ -269,6 +285,8 @@ export default function GridExample() {
     },
     {
       path: ["ABC 124", "Outbound"],
+      custom: "",
+
       Select: false,
       source: "Outbound",
       etrmId: "ABC 124",
@@ -299,6 +317,8 @@ export default function GridExample() {
     },
     {
       path: ["ABC 124", "Broker"],
+      custom: "",
+
       Select: false,
       source: "Broker",
       etrmId: "ABC 124",
@@ -329,7 +349,30 @@ export default function GridExample() {
     },
   ]);
 
+  function Btn() {
+    return (
+      <Box className="h-100 d-flex justify-content-evenly align-items-center flex-row">
+        <Box
+          sx={{ height: 12, width: 25, borderRadius: 2, bgcolor: "red" }}
+        ></Box>
+        <Box
+          sx={{ height: 12, width: 25, borderRadius: 2, bgcolor: "blue" }}
+        ></Box>
+        <Box
+          sx={{ height: 12, width: 25, borderRadius: 2, bgcolor: "yellow" }}
+        ></Box>
+        <Box
+          sx={{ height: 12, width: 25, borderRadius: 2, bgcolor: "gray" }}
+        ></Box>
+      </Box>
+    );
+  }
+
   const [columnDefs, setColumnDefs]: any = useState([
+    {
+      field: "custom",
+      cellRenderer: Btn,
+    },
     {
       field: "etrmId",
       headerName: "ETRM ID",
