@@ -30,7 +30,12 @@ export default function GridExample() {
   const [treeData, setTreeData] = useState([
     {
       path: ["ABC 123"],
-      custom: "",
+      custom: {
+        endure: false,
+        broker: false,
+        inbound: false,
+        outbound: false,
+      },
       Select: false,
       source: "ETRM",
       etrmId: "ABC 123",
@@ -61,8 +66,6 @@ export default function GridExample() {
     },
     {
       path: ["ABC 123", "Endur"],
-      custom: "",
-
       Select: false,
       source: "Endur",
       etrmId: "ABC 123",
@@ -92,41 +95,7 @@ export default function GridExample() {
       mismatchedFields: ["source"],
     },
     {
-      path: ["ABC 123", "Inbound"],
-      custom: "",
-
-      Select: false,
-      source: "Inbound",
-      etrmId: "TC-12345",
-      tradeDate: "2/23/2025",
-      etrmBuyerCounterpartyId: "Shell",
-      etrmSellerCounterpartyId: "Freepoint",
-      sellerTraderName: "Rama",
-      buyerTraderName: "Vinnie",
-      totalQuantity: 30000,
-      startDate: "4/1/2025",
-      endDate: "4/30/2025",
-      contractDate: "2/24/2025",
-      etrmBrokerId: "NNNN",
-      masterContractType: "NAESB",
-      tradeType: "FP",
-      settlementCurrency: "USD",
-      pricePrecision: 4,
-      priceCurrency: "USD",
-      priceUnit: "MMBTU",
-      quantityUnit: "MMBTU",
-      quantityFrequency: "Daily",
-      quantity: 1000,
-      fixedPrice: 4.123,
-      version: "1",
-      "Contract Status": "Active",
-      isMismatch: true,
-      mismatchedFields: ["etrmId", "source"],
-    },
-    {
       path: ["ABC 123", "Outbound"],
-      custom: "",
-
       Select: false,
       source: "Outbound",
       etrmId: "ABC 123",
@@ -154,6 +123,36 @@ export default function GridExample() {
       "Contract Status": "Active",
       isMismatch: true,
       mismatchedFields: ["source"],
+    },
+    {
+      path: ["ABC 123", "Inbound"],
+      Select: false,
+      source: "Inbound",
+      etrmId: "TC-12345",
+      tradeDate: "2/23/2025",
+      etrmBuyerCounterpartyId: "Shell",
+      etrmSellerCounterpartyId: "Freepoint",
+      sellerTraderName: "Rama",
+      buyerTraderName: "Vinnie",
+      totalQuantity: 30000,
+      startDate: "4/1/2025",
+      endDate: "4/30/2025",
+      contractDate: "2/24/2025",
+      etrmBrokerId: "NNNN",
+      masterContractType: "NAESB",
+      tradeType: "FP",
+      settlementCurrency: "USD",
+      pricePrecision: 4,
+      priceCurrency: "USD",
+      priceUnit: "MMBTU",
+      quantityUnit: "MMBTU",
+      quantityFrequency: "Daily",
+      quantity: 1000,
+      fixedPrice: 4.123,
+      version: "1",
+      "Contract Status": "Active",
+      isMismatch: true,
+      mismatchedFields: ["etrmId", "source"],
     },
     {
       path: ["ABC 123", "Broker"],
@@ -189,8 +188,12 @@ export default function GridExample() {
     },
     {
       path: ["ABC 124"],
-      custom: "",
-
+      custom: {
+        endure: true,
+        broker: true,
+        inbound: true,
+        outbound: true,
+      },
       Select: false,
       source: "ETRM",
       etrmId: "ABC 124",
@@ -221,8 +224,6 @@ export default function GridExample() {
     },
     {
       path: ["ABC 124", "Endur"],
-      custom: "",
-
       Select: false,
       source: "Endur",
       etrmId: "ABC 124",
@@ -252,41 +253,7 @@ export default function GridExample() {
       mismatchedFields: [],
     },
     {
-      path: ["ABC 124", "Inbound"],
-      custom: "",
-
-      Select: false,
-      source: "Inbound",
-      etrmId: "ABC 124",
-      tradeDate: "2/23/2025",
-      etrmBuyerCounterpartyId: "Vitol",
-      etrmSellerCounterpartyId: "Freepoint",
-      sellerTraderName: "Rama",
-      buyerTraderName: "Vinnie",
-      totalQuantity: 60000,
-      startDate: "4/1/2025",
-      endDate: "4/30/2025",
-      contractDate: "2/24/2025",
-      etrmBrokerId: "NNNN",
-      masterContractType: "NAESB",
-      tradeType: "IDX",
-      settlementCurrency: "USD",
-      pricePrecision: 4,
-      priceCurrency: "USD",
-      priceUnit: "MMBTU",
-      quantityUnit: "MMBTU",
-      quantityFrequency: "Daily",
-      quantity: 1000,
-      fixedPrice: 4.123,
-      version: "1",
-      "Contract Status": "Pending",
-      isMismatch: false,
-      mismatchedFields: [],
-    },
-    {
       path: ["ABC 124", "Outbound"],
-      custom: "",
-
       Select: false,
       source: "Outbound",
       etrmId: "ABC 124",
@@ -316,9 +283,37 @@ export default function GridExample() {
       mismatchedFields: [],
     },
     {
+      path: ["ABC 124", "Inbound"],
+      Select: false,
+      source: "Inbound",
+      etrmId: "ABC 124",
+      tradeDate: "2/23/2025",
+      etrmBuyerCounterpartyId: "Vitol",
+      etrmSellerCounterpartyId: "Freepoint",
+      sellerTraderName: "Rama",
+      buyerTraderName: "Vinnie",
+      totalQuantity: 60000,
+      startDate: "4/1/2025",
+      endDate: "4/30/2025",
+      contractDate: "2/24/2025",
+      etrmBrokerId: "NNNN",
+      masterContractType: "NAESB",
+      tradeType: "IDX",
+      settlementCurrency: "USD",
+      pricePrecision: 4,
+      priceCurrency: "USD",
+      priceUnit: "MMBTU",
+      quantityUnit: "MMBTU",
+      quantityFrequency: "Daily",
+      quantity: 1000,
+      fixedPrice: 4.123,
+      version: "1",
+      "Contract Status": "Pending",
+      isMismatch: false,
+      mismatchedFields: [],
+    },
+    {
       path: ["ABC 124", "Broker"],
-      custom: "",
-
       Select: false,
       source: "Broker",
       etrmId: "ABC 124",
@@ -347,32 +342,168 @@ export default function GridExample() {
       isMismatch: false,
       mismatchedFields: [],
     },
+    {
+      path: ["ABC 125"],
+      custom: {
+        endure: true,
+        inbound: true,
+        outbound: true,
+      },
+      Select: false,
+      source: "ETRM",
+      etrmId: "ABC 124",
+      tradeDate: "2/23/2025",
+      etrmBuyerCounterpartyId: "Vitol",
+      etrmSellerCounterpartyId: "Freepoint",
+      sellerTraderName: "Rama",
+      buyerTraderName: "Vinnie",
+      totalQuantity: 60000,
+      startDate: "4/1/2025",
+      endDate: "4/30/2025",
+      contractDate: "2/24/2025",
+      etrmBrokerId: "NNNN",
+      masterContractType: "NAESB",
+      tradeType: "IDX",
+      settlementCurrency: "USD",
+      pricePrecision: 4,
+      priceCurrency: "USD",
+      priceUnit: "MMBTU",
+      quantityUnit: "MMBTU",
+      quantityFrequency: "Daily",
+      quantity: 1000,
+      fixedPrice: 4.123,
+      version: "1",
+      "Contract Status": "Pending",
+      isMismatch: false,
+      mismatchedFields: [],
+    },
+    {
+      path: ["ABC 125", "Endur"],
+      Select: false,
+      source: "Endur",
+      etrmId: "ABC 124",
+      tradeDate: "2/23/2025",
+      etrmBuyerCounterpartyId: "Vitol",
+      etrmSellerCounterpartyId: "Freepoint",
+      sellerTraderName: "Rama",
+      buyerTraderName: "Vinnie",
+      totalQuantity: 60000,
+      startDate: "4/1/2025",
+      endDate: "4/30/2025",
+      contractDate: "2/24/2025",
+      etrmBrokerId: "NNNN",
+      masterContractType: "NAESB",
+      tradeType: "IDX",
+      settlementCurrency: "USD",
+      pricePrecision: 4,
+      priceCurrency: "USD",
+      priceUnit: "MMBTU",
+      quantityUnit: "MMBTU",
+      quantityFrequency: "Daily",
+      quantity: 1000,
+      fixedPrice: 4.123,
+      version: "1",
+      "Contract Status": "Pending",
+      isMismatch: false,
+      mismatchedFields: [],
+    },
+
+    {
+      path: ["ABC 125", "Outbound"],
+      Select: false,
+      source: "Outbound",
+      etrmId: "ABC 124",
+      tradeDate: "2/23/2025",
+      etrmBuyerCounterpartyId: "Vitol",
+      etrmSellerCounterpartyId: "Freepoint",
+      sellerTraderName: "Rama",
+      buyerTraderName: "Vinnie",
+      totalQuantity: 60000,
+      startDate: "4/1/2025",
+      endDate: "4/30/2025",
+      contractDate: "2/24/2025",
+      etrmBrokerId: "NNNN",
+      masterContractType: "NAESB",
+      tradeType: "IDX",
+      settlementCurrency: "USD",
+      pricePrecision: 4,
+      priceCurrency: "USD",
+      priceUnit: "MMBTU",
+      quantityUnit: "MMBTU",
+      quantityFrequency: "Daily",
+      quantity: 1000,
+      fixedPrice: 4.123,
+      version: "1",
+      "Contract Status": "Pending",
+      isMismatch: false,
+      mismatchedFields: [],
+    },
+    {
+      path: ["ABC 125", "Inbound"],
+      Select: false,
+      source: "Inbound",
+      etrmId: "ABC 124",
+      tradeDate: "2/23/2025",
+      etrmBuyerCounterpartyId: "Vitol",
+      etrmSellerCounterpartyId: "Freepoint",
+      sellerTraderName: "Rama",
+      buyerTraderName: "Vinnie",
+      totalQuantity: 60000,
+      startDate: "4/1/2025",
+      endDate: "4/30/2025",
+      contractDate: "2/24/2025",
+      etrmBrokerId: "NNNN",
+      masterContractType: "NAESB",
+      tradeType: "IDX",
+      settlementCurrency: "USD",
+      pricePrecision: 4,
+      priceCurrency: "USD",
+      priceUnit: "MMBTU",
+      quantityUnit: "MMBTU",
+      quantityFrequency: "Daily",
+      quantity: 1000,
+      fixedPrice: 4.123,
+      version: "1",
+      "Contract Status": "Pending",
+      isMismatch: false,
+      mismatchedFields: [],
+    },
   ]);
 
-  function Btn() {
+  function CustomChildRowStats({ custom }: any) {
+
+
+    function getBgColor(property: string): string {
+      if (Object.hasOwn(custom, property)) {
+        if (custom[property] === true) {
+          return '#58d68d  ';
+        }
+        else {
+          return '#e74c3c ';
+        }
+      }
+      else {
+        return 'rgba(174, 174, 174, 0.86) ';
+      }
+    }
+
+
     return (
-      <Box className="h-100 d-flex justify-content-evenly align-items-center flex-row">
-        <Box
-          sx={{ height: 12, width: 25, borderRadius: 2, bgcolor: "red" }}
-        ></Box>
-        <Box
-          sx={{ height: 12, width: 25, borderRadius: 2, bgcolor: "blue" }}
-        ></Box>
-        <Box
-          sx={{ height: 12, width: 25, borderRadius: 2, bgcolor: "yellow" }}
-        ></Box>
-        <Box
-          sx={{ height: 12, width: 25, borderRadius: 2, bgcolor: "gray" }}
-        ></Box>
+      <Box className="h-100 d-flex justify-content-evenly align-items-center flex-row gap-1 bg-light p-2">
+        <Box className="info_capsule" sx={{ bgcolor: getBgColor('endure') }} />
+        <Box className="info_capsule" sx={{ bgcolor: getBgColor('inbound') }} />
+        <Box className="info_capsule" sx={{ bgcolor: getBgColor('outbound') }} />
+        <Box className="info_capsule" sx={{ bgcolor: getBgColor('broker') }} />
       </Box>
     );
   }
 
+  const CustomGroupCellRenderer = (params: any) => {
+    // Only render the custom content for group rows
+    return params.node.group ? <CustomChildRowStats custom={params.data.custom} /> : null;
+  };
+
   const [columnDefs, setColumnDefs]: any = useState([
-    {
-      field: "custom",
-      cellRenderer: Btn,
-    },
     {
       field: "etrmId",
       headerName: "ETRM ID",
@@ -566,14 +697,20 @@ export default function GridExample() {
         getDataPath={(data) => data.path}
         autoGroupColumnDef={{
           headerName: "Group", // Merged column for both
-          field: "source",
+          field: "custom",
           width: 200,
-          cellEditor: "agCheckboxCellEditor",
+          cellRenderer: "agGroupCellRenderer", // Use AG Grid's built-in group renderer
+          cellRendererParams: {
+            innerRenderer: "CustomGroupCellRenderer",  // Use the custom renderer to add colored boxes
+          },
         }}
-        groupDefaultExpanded={-1}
+        groupDefaultExpanded={0}
         onCellDoubleClicked={onCellDoubleClicked}
         getRowClass={getRowClass}
         rowSelection={rowSelection}
+        components={{
+          CustomGroupCellRenderer,  // Register custom group renderer
+        }}
       />
     </div>
   );
